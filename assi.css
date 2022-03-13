@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Alfa+Slab+One&family=Fredericka+the+Great&family=Fredoka+One&family=Indie+Flower&family=Shizuru&family=Source+Code+Pro:wght@200&family=Staatliches&display=swap');
+body{
+    background-image: url(https://t4.ftcdn.net/jpg/03/83/11/67/240_F_383116712_q8N880bpnSOzI0mVJzjdpjepizaxvUqb.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1{
+    text-align: center;
+}
+#text3d {
+    color: #0265cf;
+    letter-spacing: .15em;
+    text-shadow: 
+      -1px -1px 1px #efede3, 
+      0px 1px 0 #2e2e2e, 
+      0px 2px 0 #2c2c2c, 
+      0px 3px 0 #2a2a2a, 
+      0px 4px 0 #282828, 
+      0px 5px 0 #262626, 
+      0px 6px 0 #242424, 
+      0px 7px 0 #222, 
+      0px 8px 0 #202020, 
+      0px 9px 0 #1e1e1e, 
+      0px 10px 0 #1c1c1c, 
+      0px 11px 0 #1a1a1a, 
+      0px 12px 0 #181818, 
+      0px 13px 0 #161616, 
+      0px 14px 0 #141414, 
+      0px 15px 0 #121212,
+      2px 20px 5px rgba(0, 0, 0, 0.9),
+      5px 23px 5px rgba(0, 0, 0, 0.3),
+      8px 27px 8px rgba(0, 0, 0, 0.5),
+      8px 28px 35px rgba(0, 0, 0, 0.9);
+ }
+ a {
+    background-color: rgb(35, 0, 190);
+      box-shadow: 0 5px 0 rgb(187, 13, 108);
+      color: white;
+      padding: 1em 1.5em;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    
+    a:hover {
+      background-color: #9020a7;
+      cursor: pointer;
+    }
+    
+    a:active {
+      box-shadow: none;
+      top: 5px;
+    }
+    .ques{
+        font-family: 'Alfa Slab One', cursive;
+        font-size: large;
+        color: rgb(11, 47, 204);
+        padding-left: 20px;
+    }
+    .ans{
+      font-family: 'Indie Flower', cursive;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+    }
+    .anscode{
+        font-family: 'Source Code Pro', monospace;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        border:green;
+    }
+    code {
+        display: block;
+        white-space: pre-wrap  
+      }
+
+    

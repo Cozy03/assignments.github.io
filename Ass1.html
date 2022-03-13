@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="assi.css">   
+<title>Assignment 1</title>
+  </head>
+  <body>
+    <a href="main.html" class="previous">&laquo; Go back</a>
+    <h1 id="text3d">Assignment One</h1>
+    <br><br>
+<p>
+  <div class="ques">
+    1. Watch Immitation Game.
+  </div>
+  <div class="ans">
+    ->  Watched.
+  </div>
+  <br>
+  <div class="ques">
+    2. Write a C program to list all primitive polynomials from n=4 to n=16.
+  </div>
+  <div class="anscode">
+   <code>
+      #include &ltstdio.h&gt
+      #include &ltstdlib.h&gt
+      #include&ltmath.h&gt
+      #include&ltstring.h&gt
+      
+      char* toBinary(int n, int len)
+      {
+          char* binary = (char*)malloc(sizeof(char) * len);
+          int k = 0;
+          for (unsigned i = (1 &lt len - 1); i > 0; i = i / 2) 
+          {
+              binary[k++] = (n & i) ? '1' : '0';
+      
+          }
+          binary[k] = '\0';
+          return binary;
+      }
+      
+      int num_setbits(long long int n)
+      {
+          int count = 0;
+          while(n)
+          {
+              int val = n & (-n); 
+              n -= val;
+              count++;
+          }
+          return count;
+      }
+      void lfsr(long int poly_bit,unsigned n)
+      {
+          int i;
+          long int seed_bit = 0b1001;
+          unsigned period = 0;
+          long int padder = 0b1&lt(n-1);
+          char* binpoly_bit = toBinary(poly_bit,n);
+          do
+          {
+              long int temp = poly_bit & seed_bit;
+              int counter = num_setbits(temp);
+              if(counter%2 == 0)
+              {
+                  seed_bit = seed_bit >> 1;
+              {
+                  seed_bit = (seed_bit >> 1) | padder;
+              }
+              period++;
+              
+      
+          }
+          while(seed_bit != 0b1000);
+          if(period  == (pow(2, n) -1))
+          {
+              printf("1");
+              for(int i = 0; i &lt strlen(binpoly_bit); i++) 
+              {
+                  if(binpoly_bit[i] == '1')
+                  {
+                      printf("+ x^%d ", i + 1);
+                  }
+              }
+              printf("\n");
+          }
+          
+      }
+      
+      void main()
+      {
+      
+          long int i;
+          unsigned n;
+          printf("Please enter the degree of the polynomial i.e the value of n\n");
+          scanf("%d",&n);
+          printf("The primitive polynomials of %d degree are\n",n);
+          for(i=1;i&ltpow(2,n);i+=2)
+          {
+              lfsr(i,n);
+      
+          }
+      }      
+   </code>
+  </div>
+</p>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
